@@ -15,6 +15,7 @@ const updateCount = () => {
 </script>
 
 <template>
+  <main>
   <aside
     class="
       ml-[-100%]
@@ -875,5 +876,5 @@ const updateCount = () => {
       </div>
     </div>
   </div>
+  </main>
 </template>
->>>>>>> e40d5e4d20a214531dc64ce5324a5abfa59534dd
