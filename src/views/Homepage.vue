@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+  
 <script setup>
 import { computed } from 'vue';
 import { useStore } from '../store';
