@@ -3,7 +3,9 @@ import Homepage from './views/Homepage.vue';
 </script>
 
 <template>
-  <Homepage />
+  <main>
+  <router-view />
+  </main>
 </template>
 
 <style></style>

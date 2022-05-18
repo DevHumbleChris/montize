@@ -1,33 +1,33 @@
   
 <script setup>
-import { computed } from 'vue';
-import { useStore } from '../store';
+import { computed } from 'vue'
+import { useStore } from '../store'
 
-const store = useStore();
+const store = useStore()
 
-const count = computed(() => {
-  return store.count;
+const sideMenu = computed(() => {
+  return store.sideMenu;
 })
 
-const updateCount = () => {
-  store.updateCount()
+const openSideMenu = () => {
+  store.openSideMenu()
 }
 </script>
 
 <template>
-  <main>
-
+  <section>
     <aside
-      class="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
+      :class="sideMenu ? 'fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300':'ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]'">
       <div>
-        <div class="-mx-6 px-6 py-4">
+        <div class="relative -mx-6 px-6 py-4">
           <a href="#" title="home">
-            <img src="https://tailus.io/sources/blocks/navigation-layout/preview/images/logo.svg" class="w-32" alt="tailus logo">
+            <img src="images/logo.svg" class="w-32" alt="tailus logo">
+            <button class="float-right absolute right-6 top-2" @click="openSideMenu">X</button>
           </a>
         </div>
 
         <div class="mt-8 text-center">
-          <img src="https://tailus.io/sources/blocks/navigation-layout/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28">
+          <img src="images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28">
           <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
           <span class="hidden text-gray-400 lg:block">Admin</span>
         </div>
@@ -112,7 +112,7 @@ const updateCount = () => {
       <div class="sticky top-0 h-16 border-b bg-white lg:py-2.5">
         <div class="px-6 flex items-center justify-between space-x-4 2xl:container">
           <h5 hidden class="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
-          <button class="w-12 h-16 -mr-2 border-r lg:hidden">
+          <button class="w-12 h-16 -mr-2 border-r lg:hidden" @click="openSideMenu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 my-auto" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -162,12 +162,11 @@ const updateCount = () => {
           </div>
         </div>
       </div>
-
       <div class="px-6 pt-6 2xl:container">
         <div class="flex justify-center items-center h-[80vh] border-2 border-dashed border-gray-300 rounded-xl">
           <span>Content</span>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 </template>

@@ -3,12 +3,12 @@ import { defineStore } from 'pinia';
 export const useStore = defineStore('main', {
   state: () => {
     return {
-      count: 5,
+      sideMenu: false
     };
   },
   actions: {
-    updateCount() {
-      this.count++;
+    openSideMenu() {
+      this.sideMenu = !this.sideMenu
     },
   },
 });
