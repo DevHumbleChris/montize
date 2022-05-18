@@ -21,13 +21,13 @@ const openSideMenu = () => {
       <div>
         <div class="relative -mx-6 px-6 py-4">
           <a href="#" title="home">
-            <img src="images/logo.svg" class="w-32" alt="tailus logo">
+            <img src="https://tailus.io/sources/blocks/navigation-layout/preview/images/logo.svg" class="w-32" alt="tailus logo">
             <button class="float-right absolute right-6 top-2" @click="openSideMenu">X</button>
           </a>
         </div>
 
         <div class="mt-8 text-center">
-          <img src="images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28">
+          <img src="https://tailus.io/sources/blocks/navigation-layout/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28">
           <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
           <span class="hidden text-gray-400 lg:block">Admin</span>
         </div>
