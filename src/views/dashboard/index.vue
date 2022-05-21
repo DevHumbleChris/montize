@@ -1,3 +1,7 @@
+<script setup>
+import DashboardStats from "../../components/DashboardStats.vue";
+</script>
+
 <template>
-  <div>Lets Try</div>
+  <DashboardStats />
 </template>
