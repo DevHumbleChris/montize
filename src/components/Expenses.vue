@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
+
+const checkToast = () => {
+  toast("Category Selected Successfully");
+};
+</script>
 
 <template>
   <main class="flex-1 bg-white overflow-y-auto transition duration-500 ease-in-out">
@@ -193,7 +201,7 @@
 												1.4L14.03 12H14z"
                       ></path>
                     </svg>
-                    <span>Select Category</span>
+                    <span @click="checkToast">Select Category</span>
                   </button>
 
                   <button

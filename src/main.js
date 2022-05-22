@@ -3,6 +3,8 @@ import App from './App.vue'
 import { createPinia } from 'pinia'
 import './index.css'
 import router from './routes'
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
 // import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -11,4 +13,6 @@ import router from './routes'
 
 // library.add(fas, fab, far)
 
-createApp(App).use(createPinia()).use(router).mount('#app')
+const options = {}
+
+createApp(App).use(createPinia()).use(router).use(Toast, options).mount('#app')
