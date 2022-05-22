@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <div>Welcome To Profile Page</div>
+  <div>Welcome To Reports Page</div>
 </template>

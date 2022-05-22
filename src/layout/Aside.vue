@@ -68,7 +68,7 @@ const openSideMenu = () => {
                 class="fill-current group-hover:text-sky-300"
               ></path>
             </svg>
-            <span class="-mr-1 font-medium">Dashboard</span>
+            <router-link to="/dashboard" class="-mr-1 font-medium">Dashboard</router-link>
           </a>
         </li>
         <li>
@@ -93,7 +93,9 @@ const openSideMenu = () => {
                 d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"
               />
             </svg>
-            <span class="group-hover:text-gray-700">Categories</span>
+            <router-link to="/expenses" class="group-hover:text-gray-700"
+              >Expenses</router-link
+            >
           </a>
         </li>
         <li>
@@ -118,7 +120,9 @@ const openSideMenu = () => {
                 d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"
               />
             </svg>
-            <span class="group-hover:text-gray-700">Reports</span>
+            <router-link to="/profile" class="group-hover:text-gray-700"
+              >Profile</router-link
+            >
           </a>
         </li>
         <li>
@@ -141,7 +145,9 @@ const openSideMenu = () => {
                 d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
               />
             </svg>
-            <span class="group-hover:text-gray-700">Other data</span>
+            <router-link to="/reports" class="group-hover:text-gray-700"
+              >Reports</router-link
+            >
           </a>
         </li>
         <li>
