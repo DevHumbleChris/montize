@@ -1,13 +1,3 @@
-<script setup>
-import { useToast } from "vue-toastification";
-
-const toast = useToast();
-
-const checkToast = () => {
-  toast("Category Selected Successfully");
-};
-</script>
-
 <template>
   <section class="container items-center px-4 py-8 m-auto mt-5">
     <div class="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
