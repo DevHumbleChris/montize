@@ -26,3 +26,11 @@
 .card .card-body .noPadding {
     padding: 0 !important;
 }
+
+.bg-404 {
+    background-color: #fbbb2c;
+}
+
+.btn-404 {
+    background-color: #5c2c40;
+}
