@@ -10,23 +10,6 @@
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
               <img src="../assets/profits.png" class="w-12" />
-              <!-- <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 group-hover:text-gray-50"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg> -->
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -51,24 +34,10 @@
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50"
           >
-            42000
+            <AutoCounter ref="counter" :startAmount="0" :endAmount="2000" :duration="3" prefix="KSH " separator="," decimalSeparator="." :decimals="0" :autoinit="true" />
           </h1>
           <div class="flex flex-row justify-between group-hover:text-gray-200">
-            <p>Income</p>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
+            <p>Monthly Income</p>
           </div>
         </div>
       </div>
@@ -79,14 +48,6 @@
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
               <img src="../assets/piggy-bank.png" class="w-12" />
-              <!-- <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 group-hover:text-gray-50"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-              </svg> -->
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -111,24 +72,10 @@
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50"
           >
-            42.34%
+            <AutoCounter ref="counter" :startAmount="0" :endAmount="2000" :duration="3" prefix="KSH " separator="," decimalSeparator="." :decimals="0" :autoinit="true" />
           </h1>
           <div class="flex flex-row justify-between group-hover:text-gray-200">
-            <p>Page Per Visits</p>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
+            <p>Total Savings</p>
           </div>
         </div>
       </div>
@@ -163,24 +110,10 @@
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50"
           >
-            42.34k
+            <AutoCounter ref="counter" :startAmount="0" :endAmount="2000" :duration="3" prefix="KSH " separator="," decimalSeparator="." :decimals="0" :autoinit="true" />
           </h1>
           <div class="flex flex-row justify-between group-hover:text-gray-200">
-            <p>Total Monthly Visits</p>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
+            <p>Total Expenses</p>
           </div>
         </div>
       </div>
@@ -190,18 +123,7 @@
         >
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 group-hover:text-gray-50"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <img src="../assets/cash.png" class="w-12" />
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -226,24 +148,10 @@
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50"
           >
-            00:03:20%
+            <AutoCounter ref="counter" :startAmount="0" :endAmount="2000" :duration="3" prefix="KSH " separator="," decimalSeparator="." :decimals="0" :autoinit="true" />
           </h1>
           <div class="flex flex-row justify-between group-hover:text-gray-200">
-            <p>Avg. Visit Duration</p>
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
+            <p>Total Spent This Year</p>
           </div>
         </div>
       </div>
