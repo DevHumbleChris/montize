@@ -9,7 +9,8 @@
         >
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
-              <svg
+              <img src="../assets/profits.png" class="w-12" />
+              <!-- <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 group-hover:text-gray-50"
                 viewBox="0 0 20 20"
@@ -25,7 +26,7 @@
                   d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
                   clip-rule="evenodd"
                 />
-              </svg>
+              </svg> -->
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -50,10 +51,10 @@
           <h1
             class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50"
           >
-            42.34%
+            42000
           </h1>
           <div class="flex flex-row justify-between group-hover:text-gray-200">
-            <p>Bounce Rate</p>
+            <p>Income</p>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,14 +78,15 @@
         >
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
-              <svg
+              <img src="../assets/piggy-bank.png" class="w-12" />
+              <!-- <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 group-hover:text-gray-50"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
                 <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-              </svg>
+              </svg> -->
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -136,19 +138,7 @@
         >
           <div class="flex flex-row justify-between items-center">
             <div class="px-4 py-4 bg-gray-300 rounded-xl bg-opacity-30">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 group-hover:text-gray-50"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                <path
-                  fill-rule="evenodd"
-                  d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <img src="../assets/budget.png" class="w-12" />
             </div>
             <div
               class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base"
@@ -255,243 +245,6 @@
               </svg>
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="container mx-auto">
-      <div class="grid grid-cols-12 gap-5">
-        <div class="col-span-12 xl:col-span-8 md:col-span-6">
-          <BaseCard>
-            <h4 class="card-title mb-4">This Year Sales</h4>
-            <!-- <apexchart
-              type="bar"
-              height="255"
-              :options="dashboardOne.chartOptions"
-              :series="dashboardOne.series"
-            ></apexchart> -->
-          </BaseCard>
-        </div>
-        <div class="col-span-12 xl:col-span-4 md:col-span-6">
-          <BaseCard>
-            <h4 class="card-title mb-4">Sales By Countries</h4>
-            <!-- <apexchart
-              type="pie"
-              height="290"
-              :options="dashboardTwo.chartOptions"
-              :series="dashboardTwo.series"
-            ></apexchart> -->
-          </BaseCard>
-        </div>
-        <div class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6">
-          <BaseCard noPadding class="overflow-hidden">
-            <div class="p-5">
-              <div class="text-gray-500">Last Month Sales</div>
-              <p class="text-primary text-2xl m-0">$40250</p>
-            </div>
-            <div id="basicArea-chart">
-              <!-- <apexchart
-                type="area"
-                height="270"
-                :options="splineAreaWidgetTwo.chartOptions"
-                :series="splineAreaWidgetTwo.series"
-              /> -->
-            </div>
-          </BaseCard>
-        </div>
-
-        <div class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6">
-          <BaseCard noPadding class="overflow-hidden">
-            <div class="p-5">
-              <div class="text-gray-500">Last Week Sales</div>
-              <p class="text-warning text-2xl m-0">$10250</p>
-            </div>
-            <div id="basicArea-chart">
-              <!-- <apexchart
-                type="area"
-                height="270"
-                :options="splineAreaWidgetThree.chartOptions"
-                :series="splineAreaWidgetThree.series"
-              /> -->
-            </div>
-          </BaseCard>
-        </div>
-
-        <div class="col-span-12 xl:col-span-6 lg:col-span-6">
-          <BaseCard>
-            <div class="card-title mb-4">Top Selling Products</div>
-
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-          </BaseCard>
-        </div>
-        <div class="col-span-12">
-          <BaseCard>
-            <template>
-              <div class="card-header">
-                <div class="card-title py-3">Recent Orders</div>
-              </div>
-            </template>
-            <div class="block w-full overflow-x-auto whitespace-nowrap borderless hover">
-              <div class="dataTable-wrapper dataTable-loading no-footer fixed-columns">
-                <div
-                  class="dataTable-container block w-full overflow-x-auto whitespace-nowrap borderless hover"
-                >
-                  <table class="table-3 dataTable-table max-w-full w-full">
-                    <thead>
-                      <tr class="">
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Order Id
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Buyer Name
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Product
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Status
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Shipping Cost
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Date
-                        </th>
-                        <th
-                          class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold"
-                        >
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="hover:bg-gray-100 cursor-pointer">
-                        <td class="text-xs py-5 px-4">1</td>
-
-                        <td class="text-xs">Jhon</td>
-                        <td class="py-5">
-                          <div class="flex">
-                            <img class="w-9 h-9 rounded-full mr-2" src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                            <img class="w-9 h-9 rounded-full mr-2" src="https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-                          </div>
-                        </td>
-                        <td class="py-5">
-                          <span
-                            class="px-3 py-1 rounded-full text-primary border border-primary mr-3 text-xs"
-                            >Delivered</span
-                          >
-                        </td>
-                        <td class="py-5">23%</td>
-                        <td class="py-5">12-02-20</td>
-                        <td class="py-5">
-                          <BaseBtn
-                            rounded
-                            class="border border-primary text-primary hover:bg-primary hover:text-white"
-                          >
-                            View
-                          </BaseBtn>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="dataTable-bottom">
-                  <div class="dataTable-info">Showing 1 to 8 of 8 entries</div>
-                  <nav class="dataTable-pagination">
-                    <ul class="dataTable-pagination-list"></ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </BaseCard>
         </div>
       </div>
     </div>

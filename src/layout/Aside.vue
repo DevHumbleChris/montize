@@ -30,7 +30,7 @@ const openSideMenu = () => {
             alt="tailus logo"
           />
           <button
-            :class="sideMenu ? 'float-right absolute right-6 top-2' : 'hidden'"
+            :class="sideMenu ? 'float-right absolute right-4 top-5' : 'hidden'"
             @click="openSideMenu"
           >
             <svg
