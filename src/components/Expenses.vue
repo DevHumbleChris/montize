@@ -1,277 +1,1389 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const show = ref(false);
-
-const popuphandler = (flag) => {
-  if (flag) {
-    show.value = true;
-  } else {
-    show.value = false;
-  }
-};
+const show = ref(null)
 </script>
 
 <template>
-  <section class="container items-center px-4 py-4 m-auto mt-3">
-    <div class="my-2 mx-2">Categories</div>
-    <BaseCard>
-      <div class="block w-full overflow-x-auto whitespace-nowrap borderless hover">
-        <button
-          @click="popuphandler(true)"
-          class="float-right focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-2 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded mb-3 mr-2 mt-3"
-        >
-          <p class="text-sm font-medium leading-none text-white">Add Category</p>
-        </button>
-        <div class="dataTable-wrapper dataTable-loading no-footer fixed-columns">
-          <div
-            class="dataTable-container block w-full overflow-x-auto whitespace-nowrap borderless hover"
+  <body class="flex items-center justify-center py-8 px-2">
+    <div class="w-full sm:px-6">
+      <div
+        class="
+          px-4
+          md:px-10
+          py-4
+          md:py-7
+          bg-gray-100
+          rounded-tl-lg rounded-tr-lg
+        "
+      >
+        <div class="sm:flex items-center justify-between">
+          <p
+            tabindex="0"
+            class="
+              focus:outline-none
+              text-base
+              sm:text-lg
+              md:text-xl
+              lg:text-2xl
+              font-bold
+              leading-normal
+              text-gray-800
+            "
           >
-            <table class="table-3 dataTable-table max-w-full w-full">
-              <thead>
-                <tr class="">
-                  <th class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold">
-                    Name
-                  </th>
-                  <th class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold">
-                    Description
-                  </th>
-                  <th class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold">
-                    Color
-                  </th>
-                  <th class="text-left border-b pb-3 mb-3 text-gray-500 font-semibold">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="hover:bg-gray-100 cursor-pointer">
-                  <td class="text-xs px-2">Jhon</td>
-                  <td class="py-5">
-                    <span
-                      class="px-3 py-1 rounded-full text-primary border border-primary mr-3 text-xs"
-                      >Delivered</span
-                    >
-                  </td>
-                  <td class="py-5">12-02-20</td>
-                  <td class="py-5">
-                    <div class="relative px-5 pt-2">
-                      <button
-                        class="focus:ring-2 rounded-md focus:outline-none"
-                        onclick="dropdownFunction(this)"
-                        role="button"
-                        aria-label="option"
-                      >
-                        <svg
-                          class="dropbtn"
-                          onclick="dropdownFunction(this)"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <path
-                            d="M4.16667 10.8332C4.62691 10.8332 5 10.4601 5 9.99984C5 9.5396 4.62691 9.1665 4.16667 9.1665C3.70643 9.1665 3.33334 9.5396 3.33334 9.99984C3.33334 10.4601 3.70643 10.8332 4.16667 10.8332Z"
-                            stroke="#9CA3AF"
-                            stroke-width="1.25"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M10 10.8332C10.4602 10.8332 10.8333 10.4601 10.8333 9.99984C10.8333 9.5396 10.4602 9.1665 10 9.1665C9.53976 9.1665 9.16666 9.5396 9.16666 9.99984C9.16666 10.4601 9.53976 10.8332 10 10.8332Z"
-                            stroke="#9CA3AF"
-                            stroke-width="1.25"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z"
-                            stroke="#9CA3AF"
-                            stroke-width="1.25"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </svg>
-                      </button>
-                      <div
-                        class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6 hidden"
-                      >
-                        <div
-                          tabindex="0"
-                          class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
-                        >
-                          <p>Edit</p>
-                        </div>
-                        <div
-                          tabindex="0"
-                          class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
-                        >
-                          <p>Delete</p>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            Projects
+          </p>
+          <div>
+            <button
+              class="
+                focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600
+                inline-flex
+                sm:ml-3
+                mt-4
+                sm:mt-0
+                items-start
+                justify-start
+                px-6
+                py-3
+                bg-indigo-700
+                hover:bg-indigo-600
+                focus:outline-none
+                rounded
+              "
+            >
+              <p class="text-sm font-medium leading-none text-white">
+                New Project
+              </p>
+            </button>
           </div>
         </div>
       </div>
-    </BaseCard>
-  </section>
-  <section style="min-height: 900px" class="flex items-center justify-center">
-    <div v-if="show" id="popup" class="z-50 fixed w-full flex justify-center inset-0">
       <div
-        @click="popuphandler(false)"
-        class="w-full h-full bg-gray-200 z-0 absolute inset-0"
-      ></div>
-      <div class="mx-auto container">
-        <div class="flex items-center justify-center h-full w-full">
-          <div
-            class="bg-white rounded-md shadow fixed overflow-y-auto sm:h-auto w-10/12 md:w-8/12 lg:w-1/2 2xl:w-2/5"
-          >
-            <div
-              class="bg-gray-100 rounded-tl-md rounded-tr-md px-4 md:px-8 md:py-4 py-7 flex items-center justify-between"
+        class="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto"
+      >
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-16
+                w-full
+                text-sm
+                leading-none
+                text-gray-800
+              "
             >
-              <p class="text-base font-semibold">Create New User</p>
-              <button
-                role="button"
-                aria-label="close label"
-                @click="popuphandler(false)"
-                class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 focus:outline-none"
-              >
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 7L7 21"
-                    stroke="#A1A1AA"
-                    stroke-width="1.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                  <path
-                    d="M7 7L21 21"
-                    stroke="#A1A1AA"
-                    stroke-width="1.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <div class="px-4 md:px-10 pt-6 md:pt-12 md:pb-4 pb-7">
-              <div class="flex items-center justify-center">
-                <div
-                  tabindex="0"
-                  aria-label="img"
-                  role="img"
-                  class="focus:outline-none w-40 h-40 p-16 bg-gray-100 rounded-md flex items-center justify-center"
+              <th class="font-normal text-left pl-4">Project</th>
+              <th class="font-normal text-left pl-12">Progress</th>
+              <th class="font-normal text-left pl-12">Tasks</th>
+              <th class="font-normal text-left pl-20">Budget</th>
+              <th class="font-normal text-left pl-20">Deadline</th>
+              <th class="font-normal text-left pl-16">Members</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                bg-white
+                hover:bg-gray-100
+                border-b border-t border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects.png"
+                      alt="UX Design and Visual Strategy"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">UX Design &amp; Visual Strategy</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Herman Group
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  72%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-20 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=0:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
                 >
                   <svg
-                    width="36"
-                    height="36"
-                    viewBox="0 0 36 36"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
                   >
                     <path
-                      d="M22.5 12H22.515"
-                      stroke="#94A3B8"
-                      stroke-width="2.25"
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></path>
                     <path
-                      d="M25.5 6H10.5C8.01472 6 6 8.01472 6 10.5V25.5C6 27.9853 8.01472 30 10.5 30H25.5C27.9853 30 30 27.9853 30 25.5V10.5C30 8.01472 27.9853 6 25.5 6Z"
-                      stroke="#94A3B8"
-                      stroke-width="2.25"
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></path>
                     <path
-                      d="M6 22.4999L12 16.4999C12.6841 15.8417 13.4601 15.4951 14.25 15.4951C15.0399 15.4951 15.8159 15.8417 16.5 16.4999L24 23.9999"
-                      stroke="#94A3B8"
-                      stroke-width="2.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                    <path
-                      d="M21 20.9999L22.5 19.4999C23.1841 18.8417 23.9601 18.4951 24.75 18.4951C25.5399 18.4951 26.3159 18.8417 27 19.4999L30 22.4999"
-                      stroke="#94A3B8"
-                      stroke-width="2.25"
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></path>
                   </svg>
-                </div>
-              </div>
-              <form class="mt-11">
-                <div class="flex items-center space-x-9">
-                  <input
-                    placeholder="Full Name"
-                    class="focus:ring-2 focus:ring-gray-400 w-1/2 focus:outline-none placeholder-gray-500 py-3 px-3 text-sm leading-none text-gray-800 bg-white border rounded border-gray-200"
-                  />
-                  <input
-                    placeholder="Age"
-                    type="number"
-                    min="0"
-                    class="focus:ring-2 focus:ring-gray-400 w-1/2 focus:outline-none placeholder-gray-500 py-3 px-3 text-sm leading-none text-gray-800 bg-white border rounded border-gray-200"
-                  />
-                </div>
-                <div class="flex items-center space-x-9 mt-8">
-                  <input
-                    placeholder="Email"
-                    type="email"
-                    class="focus:ring-2 focus:ring-gray-400 w-1/2 focus:outline-none placeholder-gray-500 py-3 px-3 text-sm leading-none text-gray-800 bg-white border rounded border-gray-200"
-                  />
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===0"
+                >
                   <div
                     tabindex="0"
-                    class="focus:outline-none focus:ring-2 focus:ring-gray-400 w-1/2 bg-white border rounded border-gray-200 py-2.5 px-3"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
                   >
-                    <select
-                      aria-label="select an option"
-                      class="text-sm text-gray-500 w-full focus:outline-none"
-                    >
-                      <option selected="" disabled="" value="">Category</option>
-                      <option>Designer</option>
-                      <option>Developer</option>
-                    </select>
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
                   </div>
                 </div>
-                <div class="mt-8">
-                  <textarea
-                    placeholder="Description"
-                    class="focus:outline-none focus:ring-2 focus:ring-gray-400 py-3 pl-3 overflow-y-auto h-24 border placeholder-gray-500 rounded border-gray-200 w-full resize-none focus:outline-none"
-                  ></textarea>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(1).png"
+                      alt="Branding"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">Branding</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Cassin, Bradtke and Jacobson
+                    </p>
+                  </div>
                 </div>
-              </form>
-              <div class="flex items-center justify-between mt-9">
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  18%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-6 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">09/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
                 <button
+                  @click="show===null?show=1:show=null"
+                  class="rounded-md focus:outline-none focus:ring-2 ml-7"
                   role="button"
-                  aria-label="close button"
-                  @click="popuphandler(false)"
-                  class="focus:ring-2 focus:ring-offset-2 focus:bg-gray-600 focus:ring-gray-600 focus:outline-none px-6 py-3 bg-gray-600 hover:bg-gray-500 shadow rounded text-sm text-white"
+                  aria-label="option"
                 >
-                  Cancel
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
                 </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6                    
+                  "
+                  v-if="show===1"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(2).png"
+                      alt="dev ops"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">Dev Ops</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Weissnat Group
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  28%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-8 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
                 <button
-                  aria-label="add user"
+                  @click="show===null?show=2:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
-                  class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-800 focus:outline-none px-6 py-3 bg-indigo-700 hover:bg-opacity-80 shadow rounded text-sm text-white"
+                  aria-label="options"
                 >
-                  Add User
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
                 </button>
-              </div>
-            </div>
-          </div>
-        </div>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===2"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(3).png"
+                      alt="backend services"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">Backend Services</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Hoeger - Hirthe
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  94%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-24 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=3:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===3"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(4).png"
+                      alt="UI design"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">UI Design</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Batz - Yundt
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  81%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-20 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=4:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===4"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(5).png"
+                      alt="UX stradegy"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">UX Strategy</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Erdman Group
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  37%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-14 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=5:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===5"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(6).png"
+                      alt="Website Development"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">Website Development</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      Dickens - Pacocha
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  58%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-16 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=6:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===6"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              tabindex="0"
+              class="
+                focus:outline-none
+                h-20
+                text-sm
+                leading-none
+                text-gray-800
+                border-b border-t
+                bg-white
+                hover:bg-gray-100
+                border-gray-100
+              "
+            >
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div class="w-10 h-10">
+                    <img
+                      class="w-full h-full"
+                      src="https://cdn.tuk.dev/assets/templates/olympus/projects(7).png"
+                      alt="Mobile App Development"
+                    />
+                  </div>
+                  <div class="pl-4">
+                    <p class="font-medium">Mobile App Development</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">
+                      O'Kon Inc
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">
+                  42%
+                </p>
+                <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
+                  <div class="w-12 h-3 bg-green-progress rounded-full"></div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="font-medium">32/47</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">
+                  5 tasks pending
+                </p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">$13,000</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">$4,200 left</p>
+              </td>
+              <td class="pl-20">
+                <p class="font-medium">22.12.21</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">34 days</p>
+              </td>
+              <td class="pl-16">
+                <div class="flex items-center">
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(8).png"
+                    alt="collaborator 1"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(9).png"
+                    alt="collaborator 2"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
+                    alt="collaborator 3"
+                  />
+                  <img
+                    class="shadow-md w-8 h-8 rounded-full -ml-2"
+                    src="https://cdn.tuk.dev/assets/templates/olympus/projects(11).png"
+                    alt="collaborator 4"
+                  />
+                </div>
+              </td>
+              <td class="px-7 2xl:px-0">
+                <button
+                  @click="show===null?show=7:show=null"
+                  class="focus:ring-2 rounded-md focus:outline-none ml-7"
+                  role="button"
+                  aria-label="options"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.16667 10.8334C4.62691 10.8334 5 10.4603 5 10.0001C5 9.53984 4.62691 9.16675 4.16667 9.16675C3.70643 9.16675 3.33334 9.53984 3.33334 10.0001C3.33334 10.4603 3.70643 10.8334 4.16667 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M10 10.8334C10.4602 10.8334 10.8333 10.4603 10.8333 10.0001C10.8333 9.53984 10.4602 9.16675 10 9.16675C9.53976 9.16675 9.16666 9.53984 9.16666 10.0001C9.16666 10.4603 9.53976 10.8334 10 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                    <path
+                      d="M15.8333 10.8334C16.2936 10.8334 16.6667 10.4603 16.6667 10.0001C16.6667 9.53984 16.2936 9.16675 15.8333 9.16675C15.3731 9.16675 15 9.53984 15 10.0001C15 10.4603 15.3731 10.8334 15.8333 10.8334Z"
+                      stroke="#A1A1AA"
+                      stroke-width="1.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="
+                    dropdown-content
+                    bg-white
+                    shadow
+                    w-24
+                    absolute
+                    z-30
+                    right-0
+                    mr-6
+                  "
+                  v-if="show===7"
+                >
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Edit</p>
+                  </div>
+                  <div
+                    tabindex="0"
+                    class="
+                      focus:outline-none
+                      focus:text-indigo-600
+                      text-xs
+                      w-full
+                      hover:bg-indigo-700
+                      py-4
+                      px-4
+                      cursor-pointer
+                      hover:text-white
+                    "
+                  >
+                    <p>Delete</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
+  </body>
 </template>
+
+<style>
+</style>
