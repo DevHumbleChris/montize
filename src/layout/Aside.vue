@@ -17,13 +17,13 @@ const openSideMenu = () => {
   <aside
     :class="
       sideMenu
-        ? 'fixed z-10 top-0 pb-3 px-6 max-w-4xl flex flex-col justify-between h-full border-r bg-white transition duration-300'
+        ? 'fixed z-10 top-0 pb-3 px-6 max-w-4xl flex flex-col justify-between h-screen border-r bg-white transition duration-300'
         : 'ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]'
     "
   >
     <div>
       <div class="relative -mx-6 px-6 py-4">
-        <a href="#" title="home">
+        <div>
           <img
             src="https://tailus.io/sources/blocks/navigation-layout/preview/images/logo.svg"
             class="w-32"
@@ -56,25 +56,23 @@ const openSideMenu = () => {
               ></path>
             </svg>
           </button>
-        </a>
+        </div>
       </div>
 
       <div class="mt-8 text-center">
         <img
           src="https://tailus.io/sources/blocks/navigation-layout/preview/images/second_user.webp"
           alt=""
-          class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
+          class="m-auto w-28 rounded-full object-cover lg:w-28 lg:h-28"
         />
-        <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
+        <h5 class="mt-4 text-sm lg:text-xl lg:text-xl font-semibold text-gray-600 lg:block">
           Cynthia J. Watts
         </h5>
-        <span class="hidden text-gray-400 lg:block">Admin</span>
       </div>
 
       <ul class="space-y-2 tracking-wide mt-8">
-        <li>
-          <a
-            href="#"
+        <li @click="openSideMenu">
+          <div
             aria-label="dashboard"
             class="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400"
           >
@@ -93,11 +91,10 @@ const openSideMenu = () => {
               ></path>
             </svg>
             <router-link to="/dashboard" class="-mr-1 font-medium">Dashboard</router-link>
-          </a>
+          </div>
         </li>
-        <li>
-          <a
-            href="#"
+        <li @click="openSideMenu">
+          <div
             class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
           >
             <svg
@@ -120,11 +117,10 @@ const openSideMenu = () => {
             <router-link to="/categories" class="group-hover:text-gray-700"
               >Categories</router-link
             >
-          </a>
+          </div>
         </li>
-        <li>
-          <a
-            href="#"
+        <li @click="openSideMenu">
+          <div
             class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
           >
             <svg
@@ -147,10 +143,10 @@ const openSideMenu = () => {
             <router-link to="/expenses" class="group-hover:text-gray-700"
               >Expenses</router-link
             >
-          </a>
+          </div>
         </li>
-        <li>
-          <a
+        <li @click="openSideMenu">
+          <div
             href="#"
             class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
           >
@@ -174,11 +170,10 @@ const openSideMenu = () => {
             <router-link to="/profile" class="group-hover:text-gray-700"
               >Profile</router-link
             >
-          </a>
+          </div>
         </li>
-        <li>
-          <a
-            href="#"
+        <li @click="openSideMenu">
+          <div
             class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
           >
             <svg
@@ -199,9 +194,9 @@ const openSideMenu = () => {
             <router-link to="/reports" class="group-hover:text-gray-700"
               >Reports</router-link
             >
-          </a>
+          </div>
         </li>
-        <li>
+        <li @click="openSideMenu">
           <a
             href="#"
             class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
@@ -231,7 +226,7 @@ const openSideMenu = () => {
 
     <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
       <button
-        class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+        class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group" @click="openSideMenu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
