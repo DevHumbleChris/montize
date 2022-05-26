@@ -7,7 +7,7 @@
                 <div class="rounded-xl bg-white shadow-xl">
                     <div class="p-6 sm:p-16">
                         <div class="space-y-4">
-                            <img src="images/icon.svg" loading="lazy" class="w-10" alt="tailus logo">
+                            <img src="https://tailus.io/sources/blocks/social/preview/images/icon.svg" loading="lazy" class="w-10" alt="tailus logo">
                             <h2 class="mb-8 text-2xl text-cyan-900 font-bold">Sign Up to unlock the <br> best of Montize.
                             </h2>
                         </div>
