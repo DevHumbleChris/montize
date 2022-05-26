@@ -47,7 +47,7 @@ const routes = [
         component: Signup
     },
     {
-        path: '/:path(.*)',
+        path: '/:pathMatch(.*)*',
         name: 'Error404',
         component: () => import('../views/Error404/index.vue')
     }
