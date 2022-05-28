@@ -12,6 +12,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import Vue3Autocounter from 'vue3-autocounter'
+import Vue3ApexCharts from 'vue3-apexcharts'
 
 library.add(fas, fab, far)
 
@@ -21,6 +22,7 @@ createApp(App)
     .component('BaseCard', BaseCard)
     .component('FontAwesomeIcon', FontAwesomeIcon)
     .component('AutoCounter', Vue3Autocounter)
+    .use(Vue3ApexCharts)
     .use(createPinia())
     .use(router)
     .use(Toast, options)

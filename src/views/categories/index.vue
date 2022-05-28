@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue'
+import Modal from '../../components/Modal.vue'
 
 const show = ref(null)
 </script>
 
 <template>
   <body class="flex items-center justify-center py-8 px-2">
-    <div class="w-full sm:px-6">
+    <Modal />
+    <!-- <div class="w-full sm:px-6">
       <div
         class="
           px-4
@@ -1381,7 +1383,7 @@ const show = ref(null)
           </tbody>
         </table>
       </div>
-    </div>
+    </div> -->
   </body>
 </template>
 

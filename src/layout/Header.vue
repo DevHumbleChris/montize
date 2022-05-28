@@ -1,6 +1,6 @@
 <script setup>
 import { useStore } from "../store";
-import Notification2 from "../components/Notification2.vue";
+import Notification from "../components/Notification.vue";
 
 const store = useStore();
 
@@ -115,7 +115,7 @@ const openNotification = () => {
           </svg>
           <p class="absolute -top-3 bg-green-300 rounded-xl px-1 -right-2 text-sm mt-1">45</p>
         </button>
-        <Notification2 />
+        <Notification />
       </div>
     </div>
   </div>

@@ -1,19 +1,3 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 <template>
   <TransitionRoot as="template" :show="open">
     <Dialog as="div" class="relative z-10" @close="open = false">
@@ -33,7 +17,7 @@
 
       <div class="fixed z-10 inset-0 overflow-y-auto">
         <div
-          class="flex items-stretch md:items-center justify-center min-h-full text-center md:px-2 lg:px-4"
+          class="mx-auto flex items-stretch md:items-center justify-center h-28 mt-80 max-w-lg text-center md:px-2 lg:px-4"
         >
           <TransitionChild
             as="template"
@@ -288,7 +272,7 @@ const product = {
   ],
 };
 
-const open = ref(false);
+const open = ref(true);
 const selectedColor = ref(product.colors[0]);
 const selectedSize = ref(product.sizes[2]);
 </script>
