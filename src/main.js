@@ -13,6 +13,13 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import Vue3Autocounter from 'vue3-autocounter'
 import Vue3ApexCharts from 'vue3-apexcharts'
+import { registerSW } from 'virtual:pwa-register'
+
+const updateSW = registerSW({
+  onNeedRefresh() {},
+  onOfflineReady() {},
+})
+
 
 library.add(fas, fab, far)
 
