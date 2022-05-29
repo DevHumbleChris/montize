@@ -9,12 +9,12 @@ const openSideMenu = () => {
 };
 
 const openNotification = () => {
-  store.openNotification()
-}
+  store.openNotification();
+};
 </script>
 
 <template>
-  <div class="sticky top-0 h-16 border-b bg-white lg:py-2.5">
+  <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
     <div class="px-6 flex items-center justify-between space-x-4 2xl:container">
       <h5 hidden class="text-2xl text-gray-600 font-medium lg:block">Dashboard</h5>
       <button class="w-12 h-16 -mr-2 border-r lg:hidden" @click="openSideMenu">
@@ -101,7 +101,8 @@ const openNotification = () => {
         </button>
         <button
           aria-label="notification"
-          class="w-10 h-10 relative rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200" @click="openNotification"
+          class="w-10 h-10 relative rounded-xl border bg-gray-100 focus:bg-gray-100 active:bg-gray-200"
+          @click="openNotification"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +114,9 @@ const openNotification = () => {
               d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
             />
           </svg>
-          <p class="absolute -top-3 bg-green-300 rounded-xl px-1 -right-2 text-sm mt-1">45</p>
+          <p class="absolute -top-3 bg-green-300 rounded-xl px-1 -right-2 text-sm mt-1">
+            45
+          </p>
         </button>
         <Notification />
       </div>

@@ -1,80 +1,37 @@
 <script setup>
-import { ref } from 'vue'
-import Modal from '../../components/Modal.vue'
+import { ref } from "vue";
+import Modal from "../../components/Modal.vue";
 
-const show = ref(null)
+const show = ref(null);
 </script>
 
 <template>
   <body class="flex items-center justify-center py-8 px-2">
     <Modal />
-    <!-- <div class="w-full sm:px-6">
-      <div
-        class="
-          px-4
-          md:px-10
-          py-4
-          md:py-7
-          bg-gray-100
-          rounded-tl-lg rounded-tr-lg
-        "
-      >
+    <div class="w-full sm:px-6">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
         <div class="sm:flex items-center justify-between">
           <p
             tabindex="0"
-            class="
-              focus:outline-none
-              text-base
-              sm:text-lg
-              md:text-xl
-              lg:text-2xl
-              font-bold
-              leading-normal
-              text-gray-800
-            "
+            class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800"
           >
             Projects
           </p>
           <div>
             <button
-              class="
-                focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600
-                inline-flex
-                sm:ml-3
-                mt-4
-                sm:mt-0
-                items-start
-                justify-start
-                px-6
-                py-3
-                bg-indigo-700
-                hover:bg-indigo-600
-                focus:outline-none
-                rounded
-              "
+              class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 inline-flex sm:ml-3 mt-4 sm:mt-0 items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded"
             >
-              <p class="text-sm font-medium leading-none text-white">
-                New Project
-              </p>
+              <p class="text-sm font-medium leading-none text-white">New Project</p>
             </button>
           </div>
         </div>
       </div>
-      <div
-        class="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto"
-      >
+      <div class="bg-white shadow px-4 md:px-10 pt-4 md:pt-7 pb-5 overflow-y-auto">
         <table class="w-full whitespace-nowrap">
           <thead>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-16
-                w-full
-                text-sm
-                leading-none
-                text-gray-800
-              "
+              class="focus:outline-none h-16 w-full text-sm leading-none text-gray-800"
             >
               <th class="font-normal text-left pl-4">Project</th>
               <th class="font-normal text-left pl-12">Progress</th>
@@ -87,16 +44,7 @@ const show = ref(null)
           <tbody class="w-full">
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                bg-white
-                hover:bg-gray-100
-                border-b border-t border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -109,25 +57,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">UX Design &amp; Visual Strategy</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Herman Group
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Herman Group</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  72%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">72%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-20 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -163,7 +105,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=0:show=null"
+                  @click="show === null ? (show = 0) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -199,47 +141,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===0"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 0"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -248,17 +161,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -278,18 +181,14 @@ const show = ref(null)
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  18%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">18%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-6 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">09/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -325,7 +224,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=1:show=null"
+                  @click="show === null ? (show = 1) : (show = null)"
                   class="rounded-md focus:outline-none focus:ring-2 ml-7"
                   role="button"
                   aria-label="option"
@@ -361,47 +260,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6                    
-                  "
-                  v-if="show===1"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 1"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -410,17 +280,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -433,25 +293,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">Dev Ops</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Weissnat Group
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Weissnat Group</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  28%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">28%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-8 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -487,7 +341,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=2:show=null"
+                  @click="show === null ? (show = 2) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -523,47 +377,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===2"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 2"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -572,17 +397,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -595,25 +410,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">Backend Services</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Hoeger - Hirthe
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Hoeger - Hirthe</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  94%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">94%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-24 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -649,7 +458,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=3:show=null"
+                  @click="show === null ? (show = 3) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -685,47 +494,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===3"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 3"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -734,17 +514,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -757,25 +527,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">UI Design</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Batz - Yundt
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Batz - Yundt</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  81%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">81%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-20 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -811,7 +575,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=4:show=null"
+                  @click="show === null ? (show = 4) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -847,47 +611,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===4"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 4"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -896,17 +631,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -919,25 +644,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">UX Strategy</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Erdman Group
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Erdman Group</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  37%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">37%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-14 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -973,7 +692,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=5:show=null"
+                  @click="show === null ? (show = 5) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -1009,47 +728,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===5"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 5"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -1058,17 +748,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -1081,25 +761,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">Website Development</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      Dickens - Pacocha
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">Dickens - Pacocha</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  58%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">58%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-16 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -1135,7 +809,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=6:show=null"
+                  @click="show === null ? (show = 6) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -1171,47 +845,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===6"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 6"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -1220,17 +865,7 @@ const show = ref(null)
             </tr>
             <tr
               tabindex="0"
-              class="
-                focus:outline-none
-                h-20
-                text-sm
-                leading-none
-                text-gray-800
-                border-b border-t
-                bg-white
-                hover:bg-gray-100
-                border-gray-100
-              "
+              class="focus:outline-none h-20 text-sm leading-none text-gray-800 border-b border-t bg-white hover:bg-gray-100 border-gray-100"
             >
               <td class="pl-4 cursor-pointer">
                 <div class="flex items-center">
@@ -1243,25 +878,19 @@ const show = ref(null)
                   </div>
                   <div class="pl-4">
                     <p class="font-medium">Mobile App Development</p>
-                    <p class="text-xs leading-3 text-gray-600 pt-2">
-                      O'Kon Inc
-                    </p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2">O'Kon Inc</p>
                   </div>
                 </div>
               </td>
               <td class="pl-12">
-                <p class="text-sm font-medium leading-none text-gray-800">
-                  42%
-                </p>
+                <p class="text-sm font-medium leading-none text-gray-800">42%</p>
                 <div class="w-24 h-3 bg-gray-100 rounded-full mt-2">
                   <div class="w-12 h-3 bg-green-progress rounded-full"></div>
                 </div>
               </td>
               <td class="pl-12">
                 <p class="font-medium">32/47</p>
-                <p class="text-xs leading-3 text-gray-600 mt-2">
-                  5 tasks pending
-                </p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">5 tasks pending</p>
               </td>
               <td class="pl-20">
                 <p class="font-medium">$13,000</p>
@@ -1297,7 +926,7 @@ const show = ref(null)
               </td>
               <td class="px-7 2xl:px-0">
                 <button
-                  @click="show===null?show=7:show=null"
+                  @click="show === null ? (show = 7) : (show = null)"
                   class="focus:ring-2 rounded-md focus:outline-none ml-7"
                   role="button"
                   aria-label="options"
@@ -1333,47 +962,18 @@ const show = ref(null)
                   </svg>
                 </button>
                 <div
-                  class="
-                    dropdown-content
-                    bg-white
-                    shadow
-                    w-24
-                    absolute
-                    z-30
-                    right-0
-                    mr-6
-                  "
-                  v-if="show===7"
+                  class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6"
+                  v-if="show === 7"
                 >
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Edit</p>
                   </div>
                   <div
                     tabindex="0"
-                    class="
-                      focus:outline-none
-                      focus:text-indigo-600
-                      text-xs
-                      w-full
-                      hover:bg-indigo-700
-                      py-4
-                      px-4
-                      cursor-pointer
-                      hover:text-white
-                    "
+                    class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white"
                   >
                     <p>Delete</p>
                   </div>
@@ -1383,9 +983,8 @@ const show = ref(null)
           </tbody>
         </table>
       </div>
-    </div> -->
+    </div>
   </body>
 </template>
 
-<style>
-</style>
+<style></style>

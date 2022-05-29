@@ -35,6 +35,41 @@ const options = ref({
     show: false,
   },
 });
+
+const savingsChartBar = ref({
+  series: [
+    {
+      name: "Month Income",
+      data: [40, 80, 20],
+    },
+    {
+      name: "Savings",
+      data: [30, 50, 10],
+    },
+  ],
+  options: {
+    chart: {
+      id: "savingsCurrentYear",
+    },
+    xaxis: {
+      categories: ["Jan", "Feb", "Feb"],
+    },
+  },
+});
+
+const savingChartDonut = ref({
+  series: [40, 60],
+  options: {
+    chart: {
+      id: "savingsDonut",
+      width: "100%",
+      height: 100,
+    },
+    toolbar: {
+      show: true,
+    },
+  },
+});
 </script>
 
 <template>
@@ -244,204 +279,58 @@ const options = ref({
         >
           <BaseCard>
             <h4 class="card-title mb-4">Savings Breakdown (Current Year).</h4>
-            <!-- <apexchart
-                        type="bar"
-                        height="255"
-                        :options="dashboardOne.chartOptions"
-                        :series="dashboardOne.series"
-                    ></apexchart> -->
+            <apexchart
+              type="bar"
+              height="255"
+              :series="savingsChartBar.series"
+              :options="savingsChartBar.options"
+            />
           </BaseCard>
         </div>
-        <div
-          class="col-span-12 xl:col-span-4 md:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
-        >
-          <BaseCard>
+        <div class="col-span-12 xl:col-span-4 md:col-span-6 rounded-xl">
+          <BaseCard class="shadow-lg duration-300 hover:shadow-2xl group">
             <h4 class="card-title mb-4">Savings Breakdown (Current Month).</h4>
-            <!-- <apexchart
-                        type="pie"
-                        height="290"
-                        :options="dashboardTwo.chartOptions"
-                        :series="dashboardTwo.series"
-                    ></apexchart> -->
+            <apexchart
+              type="donut"
+              height="255"
+              :series="savingChartDonut.series"
+              :options="savingChartDonut.options"
+            />
           </BaseCard>
         </div>
-        <div
-          class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
-        >
-          <BaseCard>
+        <div class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl">
+          <BaseCard class="shadow-lg duration-300 hover:shadow-2xl group">
             <div class="card-title mb-4">Expenses Breakdown (Bar)</div>
-
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
+            <apexchart
+              type="bar"
+              height="255"
+              :series="savingsChartBar.series"
+              :options="savingsChartBar.options"
+            />
           </BaseCard>
         </div>
-        <div
-          class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
-        >
-          <BaseCard>
+        <div class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl">
+          <BaseCard class="shadow-lg duration-300 hover:shadow-2xl group">
             <div class="card-title mb-4">Category Breakdown (Bar)</div>
-
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
+            <apexchart
+              type="bar"
+              height="255"
+              :series="savingsChartBar.series"
+              :options="savingsChartBar.options"
+            />
           </BaseCard>
         </div>
         <div
           class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
         >
           <BaseCard>
-            <div class="card-title mb-4">Expenses Breakdown (Table)</div>
+            <div class="card-title mb-4 flex justify-between items-center flex-wrap">
+              <div>Expenses Breakdown (Table)</div>
+              <select class="px-2 py-2 rounded">
+                <option>2022</option>
+                <option>2022</option>
+              </select>
+            </div>
 
             <div class="block w-full overflow-x-auto whitespace-nowrap borderless hover">
               <div class="dataTable-wrapper dataTable-loading no-footer fixed-columns">
@@ -547,7 +436,13 @@ const options = ref({
           class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
         >
           <BaseCard>
-            <div class="card-title mb-4">Category Breakdown (Table)</div>
+            <div class="card-title mb-4 flex justify-between items-center flex-wrap">
+              <div>Category (Table)</div>
+              <select class="px-2 py-2 rounded">
+                <option>2022</option>
+                <option>2022</option>
+              </select>
+            </div>
 
             <div class="block w-full overflow-x-auto whitespace-nowrap borderless hover">
               <div class="dataTable-wrapper dataTable-loading no-footer fixed-columns">
@@ -650,127 +545,60 @@ const options = ref({
           </BaseCard>
         </div>
         <div
-          class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
+          class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6 rounded-xl"
         >
-          <BaseCard noPadding class="overflow-hidden">
-            <div class="p-5">
-              <div class="text-gray-500">Last Month Sales</div>
-              <p class="text-primary text-2xl m-0">$40250</p>
-            </div>
-            <div id="basicArea-chart">
-              <!-- <apexchart
-                            type="area"
-                            height="270"
-                            :options="splineAreaWidgetTwo.chartOptions"
-                            :series="splineAreaWidgetTwo.series"
-                        /> -->
-            </div>
-          </BaseCard>
-        </div>
-
-        <div
-          class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
-        >
-          <BaseCard noPadding class="overflow-hidden">
-            <div class="p-5">
-              <div class="text-gray-500">Last Week Sales</div>
+          <BaseCard
+            noPadding
+            class="overflow-hidden shadow-lg duration-300 hover:shadow-2xl group"
+          >
+            <div class="p-3">
+              <div class="text-gray-500">Most Spent Expenses</div>
               <p class="text-warning text-2xl m-0">$10250</p>
             </div>
             <div id="basicArea-chart">
-              <!-- <apexchart
-                            type="area"
-                            height="270"
-                            :options="splineAreaWidgetThree.chartOptions"
-                            :series="splineAreaWidgetThree.series"
-                        /> -->
+              <apexchart
+                type="area"
+                height="255"
+                :series="series"
+                :options="options"
+                class="max-w-xs"
+              />
             </div>
           </BaseCard>
         </div>
 
         <div
-          class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl shadow-lg duration-300 hover:shadow-2xl group"
+          class="col-span-12 xl:col-span-3 lg:col-span-3 md:col-span-6 sm:col-span-6 rounded-xl"
         >
-          <BaseCard>
-            <div class="card-title mb-4">Top Selling Products</div>
+          <BaseCard
+            noPadding
+            class="overflow-hidden shadow-lg duration-300 hover:shadow-2xl group"
+          >
+            <div class="p-3">
+              <div class="text-gray-500">Most Spent Category</div>
+              <p class="text-warning text-2xl m-0">$10250</p>
+            </div>
+            <div id="basicArea-chart">
+              <apexchart
+                type="area"
+                height="255"
+                :series="series"
+                :options="options"
+                class="max-w-xs"
+              />
+            </div>
+          </BaseCard>
+        </div>
 
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
-            <div class="flex flex-col items-center mb-4 md:flex-row">
-              <img
-                class="avatar-md mr-2 rounded w-20 h-20"
-                src="/images/products/headphone-4.jpg"
-                alt=""
-              />
-              <div class="flex-grow text-center md:text-left">
-                <h5>
-                  <router-link to="" class="text-gray-800 hover:text-primary">
-                    Wireless Headphone E23
-                  </router-link>
-                </h5>
-                <p class="text-gray-400 text-xs mb-3 md:mb-0">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-                <div class="flex justify-center mb-4 md:justify-start md:mb-0">
-                  <p class="text-primary text-sm mr-2">$450</p>
-                  <p class="text-gray-400 line-through text-sm mr-2">$500</p>
-                </div>
-              </div>
-              <BaseBtn
-                sm
-                class="border border-primary text-primary rounded-full hover:bg-primary hover:text-white"
-                >View Details</BaseBtn
-              >
-            </div>
+        <div class="col-span-12 xl:col-span-6 lg:col-span-6 rounded-xl">
+          <BaseCard class="shadow-lg duration-300 hover:shadow-2xl group">
+            <div class="card-title mb-4 p-3">Top Selling Products</div>
+            <apexchart
+              type="donut"
+              height="255"
+              :series="savingChartDonut.series"
+              :options="savingChartDonut.options"
+            />
           </BaseCard>
         </div>
       </div>
