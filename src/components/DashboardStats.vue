@@ -392,12 +392,12 @@ const savingChartDonut = ref({
                           <div class="flex">
                             <img
                               class="w-9 h-9 rounded-full mr-2"
-                              src="/images/products/speaker-1.jpg"
+                              src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                               alt=""
                             />
                             <img
                               class="w-9 h-9 rounded-full mr-2"
-                              src="/images/products/headphone-1.jpg"
+                              src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                               alt=""
                             />
                           </div>
@@ -504,12 +504,12 @@ const savingChartDonut = ref({
                           <div class="flex">
                             <img
                               class="w-9 h-9 rounded-full mr-2"
-                              src="/images/products/speaker-1.jpg"
+                              src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                               alt=""
                             />
                             <img
                               class="w-9 h-9 rounded-full mr-2"
-                              src="/images/products/headphone-1.jpg"
+                              src="https://cdn.tuk.dev/assets/templates/olympus/projects(10).png"
                               alt=""
                             />
                           </div>
