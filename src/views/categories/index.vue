@@ -6,8 +6,8 @@ const show = ref(null);
 </script>
 
 <template>
-  <body class="flex items-center justify-center py-8 px-2">
-    <Modal />
+  <Modal />
+  <!-- <section class="flex items-center justify-center py-8 px-2">
     <div class="w-full sm:px-6">
       <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
         <div class="sm:flex items-center justify-between">
@@ -984,7 +984,7 @@ const show = ref(null);
         </table>
       </div>
     </div>
-  </body>
+  </section> -->
 </template>
 
 <style></style>
