@@ -14,6 +14,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import Vue3Autocounter from 'vue3-autocounter'
 import Vue3ApexCharts from 'vue3-apexcharts'
 import { registerSW } from 'virtual:pwa-register'
+import 'flowbite';
 
 const updateSW = registerSW({
   onNeedRefresh() {},
