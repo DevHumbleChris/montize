@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { useStore } from "../store";
 import Aside from "./Aside.vue";
 import Header from "./Header.vue";
-import Footer from "./Footer.vue";
+// import Footer from "./Footer.vue";
 
 const store = useStore();
 
@@ -13,7 +13,7 @@ const sideMenu = computed(() => {
 </script>
 
 <template>
-  <section>
+  <section class="relative">
     <!-- Aside Component -->
     <Aside />
     <!-- End Of Aside Component -->
@@ -24,7 +24,7 @@ const sideMenu = computed(() => {
       <!-- Content Here -->
       <router-view />
       <!-- End Of Content Here -->
-      <Footer />
+      <!-- <Footer /> -->
     </div>
   </section>
 </template>
