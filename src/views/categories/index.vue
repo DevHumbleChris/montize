@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Modal from "../../components/Modal.vue";
+import axios from "axios";
 
 const showModal = ref(false);
 
@@ -14,7 +15,7 @@ const show = ref(null);
 const categoryData = ref({
   name: "",
   monthlyBudget: "",
-  color: "",
+  color: "#003d5b",
 });
 
 const handleSubmit = () => {
@@ -26,9 +27,20 @@ const cancelSubmit = () => {
   categoryData.value = {
     name: "",
     monthlyBudget: "",
-    color: "",
+    color: "#003d5b",
   };
 };
+
+onMounted(() => {
+  axios
+    .get("/categories")
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+});
 </script>
 
 <template>
@@ -130,7 +142,7 @@ const cancelSubmit = () => {
                           name="categoryColor"
                           disabled
                           class="py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                          :value="categoryData.color ? categoryData.color : '#003d5b'"
+                          :value="categoryData.color"
                           required=""
                         />
                       </div>

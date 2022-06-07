@@ -14,6 +14,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import Vue3Autocounter from 'vue3-autocounter'
 import Vue3ApexCharts from 'vue3-apexcharts'
 import 'flowbite';
+import axios from 'axios'
 
 // Animate Animate Onscroll Setup.
 import AOS from "aos";
@@ -26,6 +27,8 @@ const options = {}
 const app = createApp(App)
 
 app.AOS = new AOS.init();
+
+axios.defaults.baseURL = 'https://montize-api.vercel.app/api'
 
 app.component('BaseCard', BaseCard)
     .component('FontAwesomeIcon', FontAwesomeIcon)
