@@ -35,10 +35,10 @@ onMounted(() => {
   axios
     .get("/categories")
     .then((data) => {
-      console.log(data);
+      alert(data);
     })
     .catch((err) => {
-      console.log(err.message);
+      alert(err.message);
     });
 });
 </script>
